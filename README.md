@@ -128,6 +128,20 @@ p '--------'
 p A.class_variable_get(:@@v)
 ```
 
+```Ruby
+# mylibrary.rb
+
+class MyLibrary
+  puts "I was loaded!"
+end
+
+##
+
+irb(main):001:0> require 'mylibrary'
+
+irb(main):001:0> autoload :MyLibrary, 'mylibrary'
+```
+
 
 
 

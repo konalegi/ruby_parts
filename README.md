@@ -142,8 +142,14 @@ irb(main):001:0> require 'mylibrary'
 irb(main):001:0> autoload :MyLibrary, 'mylibrary'
 ```
 
+```Ruby
+# which one will fail?
 
+irb(main):001:0> (1..42).to_a.forty_two
+irb(main):001:0> (1..42).to_a.forty_one
+irb(main):001:0> (1..42).to_a.forty
 
+```
 
 
 

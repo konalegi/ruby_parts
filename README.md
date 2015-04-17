@@ -143,7 +143,7 @@ irb(main):001:0> autoload :MyLibrary, 'mylibrary'
 ```
 
 ```Ruby
-# which one will fail?
+# which one will fail in Rails?
 
 irb(main):001:0> (1..42).to_a.forty_two
 irb(main):001:0> (1..42).to_a.forty_one
@@ -151,5 +151,17 @@ irb(main):001:0> (1..42).to_a.forty
 
 ```
 
+```Ruby
+module MyModule
+  class << self
+    def say_hello
+      p 'Hello'
+    end
+  end
+end
 
+MyModule.say_hello
+```
+
+MyModule.say_hello
 

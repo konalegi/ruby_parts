@@ -172,6 +172,8 @@ class BaseClass
       @callbacks += [*method_names]
     end
   end
+
+  before_action :base_class_action
 end
 
 class Book < BaseClass
@@ -182,6 +184,11 @@ class User < BaseClass
   before_action :set_name, :set_surname
 end
 
+class Glass < BaseClass
+end
+
 p Book.callbacks
 p User.callbacks
+p Glass.callbacks
+p BaseClass.callbacks
 ```

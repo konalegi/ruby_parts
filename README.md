@@ -163,5 +163,25 @@ end
 MyModule.say_hello
 ```
 
-MyModule.say_hello
+```Ruby
+class BaseClass
+  class << self
+    attr_reader :callbacks
+    def before_action(*method_names, **options)
+      @callbacks ||= []
+      @callbacks += [*method_names]
+    end
+  end
+end
 
+class Book < BaseClass
+  before_action :set_title, :set_isbn, only: [:show, :index]
+end
+
+class User < BaseClass
+  before_action :set_name, :set_surname
+end
+
+p Book.callbacks
+p User.callbacks
+```
